@@ -4,17 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://d1ps0b6hcgwub" path="res://Paddle/paddle_protoype.png" id="2_welph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
-size = Vector2(152.42516, 302)
+size = Vector2(153.42516, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_welph"]
+size = Vector2(130.5, 153)
 
 [node name="Paddle" type="StaticBody2D" unique_id=1088609142]
 script = ExtResource("1_plu76")
+left_right_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
 scale = Vector2(0.6561713, 0.65617126)
 texture = ExtResource("2_welph")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365709559]
+[node name="BallBounceShape" type="CollisionShape2D" parent="." unique_id=365709559]
 position = Vector2(7.6293945e-06, 1.2125778)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_plu76")
 debug_color = Color(0.9123508, 0.21452719, 0.5134427, 0.41960785)
+
+[node name="LeftCollisionArea" type="Area2D" parent="." unique_id=1658505693]
+unique_name_in_owner = true
+
+[node name="LeftCollisionBox" type="CollisionShape2D" parent="LeftCollisionArea" unique_id=2053226935]
+position = Vector2(-173.25, 0.5)
+shape = SubResource("RectangleShape2D_welph")
+
+[node name="RightCollisionArea" type="Area2D" parent="." unique_id=2018681690]
+unique_name_in_owner = true
+
+[node name="RightCollisionBox" type="CollisionShape2D" parent="RightCollisionArea" unique_id=428369578]
+position = Vector2(153, 1)
+shape = SubResource("RectangleShape2D_welph")

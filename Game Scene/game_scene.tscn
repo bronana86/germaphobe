@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
 [ext_resource type="PackedScene" uid="uid://esm0knjsdkeo" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
+[ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Plane/GameOverPlane.tscn" id="4_nl8ue"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
 
@@ -11,40 +12,51 @@
 [node name="Wall" parent="Walls" unique_id=1842671465 instance=ExtResource("1_mwla4")]
 position = Vector2(200, 42)
 
-[node name="Wall2" parent="Walls" unique_id=883109585 instance=ExtResource("1_mwla4")]
-position = Vector2(583, 45)
+[node name="Wall2" parent="Walls" unique_id=2141049065 instance=ExtResource("1_mwla4")]
+position = Vector2(597, 42)
 
-[node name="Wall3" parent="Walls" unique_id=1565581736 instance=ExtResource("1_mwla4")]
-position = Vector2(918, 45)
+[node name="Wall3" parent="Walls" unique_id=2054506439 instance=ExtResource("1_mwla4")]
+position = Vector2(1005, 39)
 
-[node name="Wall4" parent="Walls" unique_id=925208138 instance=ExtResource("1_mwla4")]
-position = Vector2(221, 610)
+[node name="Wall4" parent="Walls" unique_id=665577543 instance=ExtResource("1_mwla4")]
+position = Vector2(1421, 39)
 
-[node name="Wall5" parent="Walls" unique_id=1129091928 instance=ExtResource("1_mwla4")]
-position = Vector2(604, 613)
+[node name="Wall5" parent="Walls" unique_id=222950632 instance=ExtResource("1_mwla4")]
+position = Vector2(1701, 39)
 
-[node name="Wall6" parent="Walls" unique_id=506663174 instance=ExtResource("1_mwla4")]
-position = Vector2(939, 613)
-
-[node name="Wall7" parent="Walls" unique_id=749850844 instance=ExtResource("1_mwla4")]
-position = Vector2(15, 224)
+[node name="Wall6" parent="Walls" unique_id=21104395 instance=ExtResource("1_mwla4")]
+position = Vector2(376, 285)
 rotation = 1.5707964
 
-[node name="Wall8" parent="Walls" unique_id=907517769 instance=ExtResource("1_mwla4")]
-position = Vector2(8, 436)
+[node name="Wall7" parent="Walls" unique_id=1923362897 instance=ExtResource("1_mwla4")]
+position = Vector2(379, 690)
 rotation = 1.5707964
 
-[node name="Wall9" parent="Walls" unique_id=936122140 instance=ExtResource("1_mwla4")]
-position = Vector2(1115, 230)
+[node name="Wall8" parent="Walls" unique_id=1510713454 instance=ExtResource("1_mwla4")]
+position = Vector2(384, 859)
 rotation = 1.5707964
 
-[node name="Wall10" parent="Walls" unique_id=1670000422 instance=ExtResource("1_mwla4")]
-position = Vector2(1108, 442)
+[node name="Wall9" parent="Walls" unique_id=1689370744 instance=ExtResource("1_mwla4")]
+position = Vector2(1872, 284)
+rotation = 1.5707964
+
+[node name="Wall10" parent="Walls" unique_id=655029868 instance=ExtResource("1_mwla4")]
+position = Vector2(1875, 689)
+rotation = 1.5707964
+
+[node name="Wall11" parent="Walls" unique_id=162094821 instance=ExtResource("1_mwla4")]
+position = Vector2(1880, 858)
 rotation = 1.5707964
 
 [node name="Paddle" parent="." unique_id=825981723 instance=ExtResource("2_nl8ue")]
-position = Vector2(550, 481)
+position = Vector2(901, 981)
 left_right_speed = 10.0
 
 [node name="Ball" parent="." unique_id=1200674082 instance=ExtResource("3_6ivl6")]
 position = Vector2(503, 217)
+speed = 500.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580459455]
+
+[node name="GameOverPlane" parent="." unique_id=1027130878 instance=ExtResource("4_nl8ue")]
+position = Vector2(126, 1097)

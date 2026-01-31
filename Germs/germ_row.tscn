@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0ao4iqwfd6pt"]
+
+[ext_resource type="Script" uid="uid://braj8vogq2ff7" path="res://Germs/germ_row.gd" id="1_1qudj"]
+
+[node name="GermRow" type="Node2D" unique_id=1665513615]
+scale = Vector2(1, 1.1067687)
+script = ExtResource("1_1qudj")
+germ_spaces = 5
+germ_scale = 32.0

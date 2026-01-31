@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b5raotb1p5as5"]
+
+[ext_resource type="PackedScene" uid="uid://b0ao4iqwfd6pt" path="res://Germs/germ_row.tscn" id="1_tqw3e"]
+
+[node name="GermTest" type="Node2D" unique_id=1698961634]
+
+[node name="GermRow" parent="." unique_id=1665513615 instance=ExtResource("1_tqw3e")]
+position = Vector2(222, 281)
+germ_spaces = 8

@@ -20,3 +20,4 @@ func _ready() -> void:
 		var germ = germ_scene.instantiate()
 		add_child(germ)
 		germ.position = pos
+		germ.row_position = pos # make sure each germ knows where it's supposed to stay.

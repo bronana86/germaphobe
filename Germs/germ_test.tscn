@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://b5raotb1p5as5"]
 
-[ext_resource type="PackedScene" uid="uid://b0ao4iqwfd6pt" path="res://Germs/germ_row.tscn" id="1_tqw3e"]
+[ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_test.gd" id="1_ijw12"]
 
 [node name="GermTest" type="Node2D" unique_id=1698961634]
-
-[node name="GermRow" parent="." unique_id=1665513615 instance=ExtResource("1_tqw3e")]
-position = Vector2(222, 281)
-germ_spaces = 8
+script = ExtResource("1_ijw12")
+starting_points = Array[Vector2]([Vector2(0, 64), Vector2(0, 32), Vector2(0, 0)])
+spawn_time = 2.0

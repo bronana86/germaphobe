@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dey3srcpm0okh"]
+
+[ext_resource type="Texture2D" uid="uid://cfojtqvw8tdw2" path="res://Germs/TEMP_basic_germ_1.png" id="1_6kl71"]
+[ext_resource type="Script" uid="uid://baq0wiesu17uc" path="res://Germs/germ.gd" id="1_gkesm"]
+[ext_resource type="Texture2D" uid="uid://cjaanml1sbe8x" path="res://Germs/TEMP_basic_germ_2.png" id="2_gkesm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeo2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6kl71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gkesm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5pvo"]
+size = Vector2(25, 26)
+
+[node name="Germ" type="RigidBody2D" unique_id=913903081]
+gravity_scale = 0.0
+script = ExtResource("1_gkesm")
+
+[node name="GermSprite" type="AnimatedSprite2D" parent="." unique_id=674112745]
+sprite_frames = SubResource("SpriteFrames_eeo2c")
+autoplay = "default"
+
+[node name="GermCollider" type="CollisionShape2D" parent="." unique_id=1640232981]
+position = Vector2(-2.5, -1)
+shape = SubResource("RectangleShape2D_e5pvo")

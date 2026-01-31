@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dy53ntyqb52jv"]
+
+[ext_resource type="Script" uid="uid://otbu3jxbbr1d" path="res://Wall/wall.gd" id="1_jt7bp"]
+[ext_resource type="Texture2D" uid="uid://1a1ip6r3vcph" path="res://Wall/wall_prototype.png" id="2_rwdp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
+size = Vector2(559.6246, 1535.956)
+
+[node name="Wall" type="StaticBody2D" unique_id=2141049065]
+script = ExtResource("1_jt7bp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
+scale = Vector2(0.3324889, 0.15654974)
+texture = ExtResource("2_rwdp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365709559]
+position = Vector2(-0.49999994, -0.5000005)
+rotation = 1.5707964
+scale = Vector2(0.11614929, 0.2767006)
+shape = SubResource("RectangleShape2D_plu76")
+debug_color = Color(0, 0.64674294, 0.26380393, 0.41960785)

@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
 size = Vector2(152.42516, 302)
 
-[node name="Paddle" type="CharacterBody2D" unique_id=936506083]
+[node name="Paddle" type="StaticBody2D" unique_id=1088609142]
 script = ExtResource("1_plu76")
-left_right_speed = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
 scale = Vector2(0.6561713, 0.65617126)

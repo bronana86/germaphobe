@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://esm0knjsdkeo"]
 
-[ext_resource type="Script" uid="uid://bmha7c4m3434o" path="res://paddle.gd" id="1_plu76"]
+[ext_resource type="Script" uid="uid://bmha7c4m3434o" path="res://Paddle/paddle.gd" id="1_plu76"]
 [ext_resource type="Texture2D" uid="uid://d1ps0b6hcgwub" path="res://Paddle/paddle_protoype.png" id="2_welph"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibq34"]
-radius = 112.83039
-height = 462.15405
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
+size = Vector2(152.42516, 302)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=936506083]
 script = ExtResource("1_plu76")
 left_right_speed = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
+scale = Vector2(0.6561713, 0.65617126)
 texture = ExtResource("2_welph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365709559]
-rotation = 1.5475951
-shape = SubResource("CapsuleShape2D_ibq34")
+position = Vector2(7.6293945e-06, 1.2125778)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_plu76")
 debug_color = Color(0.9123508, 0.21452719, 0.5134427, 0.41960785)

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cmjn1l7lksk20"]
 
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="1_dye48"]
+[ext_resource type="PackedScene" uid="uid://esm0knjsdkeo" path="res://Paddle/paddle.tscn" id="2_g7fap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gd0v6"]
-size = Vector2(1155, 19)
+size = Vector2(2649.3994, 18.641865)
 
 [node name="BallTest" type="Node2D" unique_id=378734256]
 
@@ -12,7 +13,7 @@ position = Vector2(509, 197)
 
 [node name="Walls" type="Node2D" parent="." unique_id=868756915]
 position = Vector2(575, 325)
-rotation = 0.4415555
+rotation = -0.0037424103
 
 [node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1433093829]
 position = Vector2(1, -336)
@@ -33,6 +34,7 @@ position = Vector2(-621.00006, 15.000004)
 scale = Vector2(-0.07392384, 38.530136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=902964490]
+position = Vector2(-1947.5409, -0.20205534)
 shape = SubResource("RectangleShape2D_gd0v6")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=2096506731]
@@ -40,4 +42,9 @@ position = Vector2(619.99994, 2.0000038)
 scale = Vector2(-0.07392384, 38.530136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1192145218]
+position = Vector2(581.63306, -0.047770917)
+skew = 1.5258789e-05
 shape = SubResource("RectangleShape2D_gd0v6")
+
+[node name="Paddle" parent="." unique_id=936506083 instance=ExtResource("2_g7fap")]
+position = Vector2(558, 509)

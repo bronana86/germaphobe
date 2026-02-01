@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Mask extends StaticBody2D
 @onready var left_collision_area: Area2D = %LeftCollisionArea
 @onready var right_collision_area: Area2D = %RightCollisionArea
 

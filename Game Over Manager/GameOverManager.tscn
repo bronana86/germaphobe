@@ -9,6 +9,9 @@
 a = Vector2(-1590, 14)
 b = Vector2(3056, -3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdvwr"]
+size = Vector2(2204, 77)
+
 [node name="GameOverManager" type="Node2D" unique_id=1552969452]
 script = ExtResource("1_xdvwr")
 
@@ -25,8 +28,8 @@ unique_name_in_owner = true
 script = ExtResource("2_b3nye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GermGameOverPlane" unique_id=133130461]
-position = Vector2(-19, 981)
-shape = SubResource("SegmentShape2D_mnf0k")
+position = Vector2(882, 608)
+shape = SubResource("RectangleShape2D_xdvwr")
 
 [node name="GameOverMenu" type="Control" parent="." unique_id=1689571770]
 unique_name_in_owner = true

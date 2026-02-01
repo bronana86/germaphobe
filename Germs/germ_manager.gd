@@ -40,6 +40,5 @@ func spawn_row() -> void:
 	await get_tree().create_timer(0.5).timeout
 	var germ_row = germ_row_prefab.instantiate()
 	add_child(germ_row)
-	print(position)
 	# reset the timer
 	spawn_row()

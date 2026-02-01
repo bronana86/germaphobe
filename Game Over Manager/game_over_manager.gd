@@ -20,9 +20,9 @@ func game_over() ->void:
 
 func reload_game() ->void:
 	get_tree().paused = false
-	print("reload game")
+	get_tree().change_scene_to_file("uid://8wp4j67gb5hi") #loads game_scene.tscn
 
 func go_to_main_menu() ->void:
 	get_tree().paused = false
-	print("go to mauin menu")
+	get_tree().change_scene_to_file("uid://b33yhwxamtj01") #loads MainMenu.tscn
 	

@@ -6,6 +6,7 @@ var row_position: Vector2
 ## The frequency for which each animation appears. Position of the weight value must match the position of the animation in the SpriteFrames.
 @export var anim_weights: Array[float]
 var anim_weight_total: float = 0
+var point_value: int
 
 func _ready() -> void:
 	for value in anim_weights:
@@ -29,12 +30,16 @@ func random_animation() -> void:
 	match anim:
 				0.0:
 					$GermSprite.animation = "germ_1"
+					point_value = 75
 				1.0:
 					$GermSprite.animation = "germ_2"
+					point_value = 50
 				2.0:
 					$GermSprite.animation = "germ_3"
+					point_value = 25
 				3.0:
 					$GermSprite.animation = "germ_4"
+					point_value = 150
 
 
 ## Finds an animation based on it's weight value
@@ -46,12 +51,16 @@ func weighted_random_animation() -> void:
 			match anim_weights.find(value):
 				0:
 					$GermSprite.animation = "germ_1"
+					point_value = 75
 				1:
 					$GermSprite.animation = "germ_2"
+					point_value = 50
 				2:
 					$GermSprite.animation = "germ_3"
+					point_value = 25
 				3:
 					$GermSprite.animation = "germ_4"
+					point_value = 150
 			return
 		else: anim_num -= value
 	

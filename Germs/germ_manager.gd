@@ -9,6 +9,9 @@ class_name GermManager extends Node2D
 @export var germ_spaces: int					## The number of germ spaces in this row. Used to generate the germ positions.
 @export var germ_scale: float				## Size of the germ sprites, in pixles. Used to generate spacing.
 
+@export_category("Score Tracking")
+@export var score_display: Node
+
 ## The PackedScene of the germ row that's preloaded for easy instantiation.
 var germ_row_prefab: PackedScene = preload("res://Germs/germ_row.tscn")
 
@@ -20,6 +23,10 @@ func _ready() -> void:
 		var germ_row = germ_row_prefab.instantiate()
 		add_child(germ_row)
 		germ_row.position.y = germ_scale*i
+	
+	
+	# pass the spawn timer up to the manager.
+	GameManager.spawn_timer = spawn_time
 	
 	# Start the row spawning timer.
 	spawn_row()

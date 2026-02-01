@@ -19,8 +19,8 @@ func _process(_delta) -> void:
 
 ## Destroys the germ when it comes into contact with the pill.
 func _destroy() -> void:
-	# signal to update score.
-	queue_free() # you server ZERO purpose.
+	GameManager.current_score += point_value
+	queue_free() # you serve ZERO purpose.
 
 
 ## Selects a random animation.

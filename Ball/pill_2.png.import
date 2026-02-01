@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd68gt46rm0mu"
-path="res://.godot/imported/pill_3.png-6f16d92008a0f0a13d3adbacdebbbf33.ctex"
+uid="uid://cgogu81gopktn"
+path="res://.godot/imported/pill_2.png-e08e7fe4ad2b0e7a72d4de28d45eeead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Germs/pill_3.png"
-dest_files=["res://.godot/imported/pill_3.png-6f16d92008a0f0a13d3adbacdebbbf33.ctex"]
+source_file="res://Ball/pill_2.png"
+dest_files=["res://.godot/imported/pill_2.png-e08e7fe4ad2b0e7a72d4de28d45eeead.ctex"]
 
 [params]
 

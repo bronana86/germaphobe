@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://8wp4j67gb5hi"]
 
+[ext_resource type="Script" uid="uid://bqbrfg4a421rp" path="res://Game Scene/game_manager.gd" id="1_fnspm"]
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
 [ext_resource type="PackedScene" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
 [ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Manager/GameOverManager.tscn" id="4_nl8ue"]
 [ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_manager.gd" id="5_6ivl6"]
+[ext_resource type="Theme" path="res://Main Menu/main_theme.tres" id="6_33fdy"]
+[ext_resource type="Script" uid="uid://c58y45eeqg4ot" path="res://Score/score.gd" id="7_fnspm"]
+[ext_resource type="Script" uid="uid://72g1duhyu5rc" path="res://Score/high_score.gd" id="8_vsmle"]
+[ext_resource type="Texture2D" uid="uid://cjb6q5wrkhfdj" path="res://Score/thermostat.png" id="9_sb8j3"]
+[ext_resource type="Texture2D" uid="uid://cqsyipub3c8hp" path="res://Score/thermostat_full.png" id="10_vvv6q"]
+[ext_resource type="Script" uid="uid://bmffq78j0a01r" path="res://Score/progress_bar.gd" id="11_5n5vv"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
+script = ExtResource("1_fnspm")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1698246839]
 
 [node name="Wall" parent="Walls" unique_id=1842671465 instance=ExtResource("1_mwla4")]
-position = Vector2(200, 42)
+position = Vector2(514, 42)
 
 [node name="Wall2" parent="Walls" unique_id=2141049065 instance=ExtResource("1_mwla4")]
 position = Vector2(597, 42)
@@ -26,15 +34,15 @@ position = Vector2(1421, 39)
 position = Vector2(1701, 39)
 
 [node name="Wall6" parent="Walls" unique_id=21104395 instance=ExtResource("1_mwla4")]
-position = Vector2(41, 285)
+position = Vector2(336, 285)
 rotation = 1.5707964
 
 [node name="Wall7" parent="Walls" unique_id=1923362897 instance=ExtResource("1_mwla4")]
-position = Vector2(42, 690)
+position = Vector2(337, 690)
 rotation = 1.5707964
 
 [node name="Wall8" parent="Walls" unique_id=1510713454 instance=ExtResource("1_mwla4")]
-position = Vector2(43, 859)
+position = Vector2(340, 859)
 rotation = 1.5707964
 
 [node name="Wall9" parent="Walls" unique_id=1689370744 instance=ExtResource("1_mwla4")]
@@ -54,7 +62,7 @@ position = Vector2(901, 981)
 left_right_speed = 10.0
 
 [node name="Ball" parent="." unique_id=1200674082 instance=ExtResource("3_6ivl6")]
-position = Vector2(259, 738)
+position = Vector2(811, 875)
 contact_monitor = true
 max_contacts_reported = 5
 speed = 500.0
@@ -64,10 +72,84 @@ starting_direction = Vector2(1, -1)
 
 [node name="GameOverPlane" parent="." unique_id=1027130878 instance=ExtResource("4_nl8ue")]
 
-[node name="GermManager" type="Node2D" parent="." unique_id=1728280054]
-position = Vector2(220, 108)
+[node name="GermManager" type="Node2D" parent="." unique_id=1728280054 node_paths=PackedStringArray("score_display")]
+position = Vector2(427, 108)
 script = ExtResource("5_6ivl6")
 starting_rows = 3
-spawn_time = 10.0
-germ_spaces = 10
+spawn_time = 12.0
+germ_spaces = 9
 germ_scale = 96.0
+score_display = NodePath("../Info Display/VBoxContainer/CurrentScore/VBoxContainer/Score")
+
+[node name="Info Display" type="PanelContainer" parent="." unique_id=234063193]
+custom_minimum_size = Vector2(300, 1080)
+offset_right = 300.0
+offset_bottom = 1080.0
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info Display" unique_id=835995191]
+layout_mode = 2
+
+[node name="CurrentScore" type="MarginContainer" parent="Info Display/VBoxContainer" unique_id=1612536334]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info Display/VBoxContainer/CurrentScore" unique_id=1472146312]
+layout_mode = 2
+
+[node name="ScoreTitle" type="Label" parent="Info Display/VBoxContainer/CurrentScore/VBoxContainer" unique_id=1587013353]
+layout_mode = 2
+theme = ExtResource("6_33fdy")
+text = "Score:"
+
+[node name="Score" type="Label" parent="Info Display/VBoxContainer/CurrentScore/VBoxContainer" unique_id=965755403]
+layout_mode = 2
+theme = ExtResource("6_33fdy")
+text = "9000"
+script = ExtResource("7_fnspm")
+
+[node name="HSeparator" type="HSeparator" parent="Info Display/VBoxContainer" unique_id=459299352]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HighScore" type="MarginContainer" parent="Info Display/VBoxContainer" unique_id=1715153801]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info Display/VBoxContainer/HighScore" unique_id=1474277044]
+layout_mode = 2
+
+[node name="ScoreTitle" type="Label" parent="Info Display/VBoxContainer/HighScore/VBoxContainer" unique_id=1893685561]
+layout_mode = 2
+theme = ExtResource("6_33fdy")
+theme_override_font_sizes/font_size = 42
+text = "High Score:"
+
+[node name="Score" type="Label" parent="Info Display/VBoxContainer/HighScore/VBoxContainer" unique_id=1347681765]
+layout_mode = 2
+theme = ExtResource("6_33fdy")
+text = "9000"
+script = ExtResource("8_vsmle")
+
+[node name="HSeparator2" type="HSeparator" parent="Info Display/VBoxContainer" unique_id=1199139693]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+
+[node name="Thermometer" type="MarginContainer" parent="Info Display/VBoxContainer" unique_id=1506410872]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Info Display/VBoxContainer/Thermometer" unique_id=1947737679]
+custom_minimum_size = Vector2(100, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+fill_mode = 3
+texture_over = ExtResource("9_sb8j3")
+texture_progress = ExtResource("10_vvv6q")
+script = ExtResource("11_5n5vv")

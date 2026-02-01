@@ -1,26 +1,11 @@
 [gd_scene format=3 uid="uid://dy03gxb518pey"]
 
 [ext_resource type="Script" uid="uid://dpb4jh08yl0jm" path="res://Ball/ball.gd" id="1_ngrkv"]
-[ext_resource type="Texture2D" uid="uid://d0xddqq4gx5bc" path="res://Ball/TEMP_ball_1.png" id="2_4s4qd"]
-[ext_resource type="Texture2D" uid="uid://bmdkbj224jlch" path="res://Ball/TEMP_ball_2.png" id="3_0t0x3"]
+[ext_resource type="Texture2D" uid="uid://cmqor6or7kccj" path="res://Ball/pill_1.png" id="2_65gad"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gd0v6"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_npfwd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_4s4qd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_0t0x3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8rqkj"]
 radius = 15.0
@@ -29,17 +14,17 @@ radius = 15.0
 physics_material_override = SubResource("PhysicsMaterial_gd0v6")
 gravity_scale = 0.0
 linear_damp_mode = 1
+angular_velocity = 0.17453292
 angular_damp_mode = 1
 script = ExtResource("1_ngrkv")
 speed = 250.0
 starting_direction = Vector2(-1, 1)
 
-[node name="BallSprite" type="AnimatedSprite2D" parent="." unique_id=1922377753]
-sprite_frames = SubResource("SpriteFrames_npfwd")
-autoplay = "default"
+[node name="BallSprite" type="Sprite2D" parent="." unique_id=1584984682]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_65gad")
 
 [node name="BallCollider" type="CollisionShape2D" parent="." unique_id=914590610]
-position = Vector2(-2, 2)
 shape = SubResource("CircleShape2D_8rqkj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

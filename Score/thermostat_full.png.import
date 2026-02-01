@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmqor6or7kccj"
-path="res://.godot/imported/pill_1.png-8b9db74842ae9a7b1ce18c9ad6909cc1.ctex"
+uid="uid://cqsyipub3c8hp"
+path="res://.godot/imported/thermostat_full.png-d916e7690e6c54ee0a91005190f3a52e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Germs/pill_1.png"
-dest_files=["res://.godot/imported/pill_1.png-8b9db74842ae9a7b1ce18c9ad6909cc1.ctex"]
+source_file="res://Score/thermostat_full.png"
+dest_files=["res://.godot/imported/thermostat_full.png-d916e7690e6c54ee0a91005190f3a52e.ctex"]
 
 [params]
 

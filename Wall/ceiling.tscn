@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://2468avo4awnm"]
+
+[ext_resource type="Script" uid="uid://otbu3jxbbr1d" path="res://Wall/wall.gd" id="1_vda2w"]
+[ext_resource type="Texture2D" uid="uid://q4cll8fn0x1x" path="res://Game Scene/band_aid_wall.png" id="2_vda2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
+size = Vector2(482.1381, 1510.658)
+
+[node name="Ceiling" type="StaticBody2D" unique_id=2141049065]
+script = ExtResource("1_vda2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
+texture = ExtResource("2_vda2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365709559]
+rotation = 1.5707964
+scale = Vector2(0.11614929, 0.2767006)
+shape = SubResource("RectangleShape2D_plu76")
+debug_color = Color(0, 0.64674294, 0.26380393, 0.41960785)

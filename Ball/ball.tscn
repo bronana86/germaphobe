@@ -17,7 +17,7 @@ linear_damp_mode = 1
 angular_velocity = 0.17453292
 angular_damp_mode = 1
 script = ExtResource("1_ngrkv")
-speed = 250.0
+speed = 350.0
 starting_direction = Vector2(-1, 1)
 
 [node name="BallSprite" type="Sprite2D" parent="." unique_id=1584984682]

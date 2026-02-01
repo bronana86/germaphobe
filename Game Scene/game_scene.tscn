@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://bqbrfg4a421rp" path="res://Game Scene/game_manager.gd" id="1_fnspm"]
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
 [ext_resource type="PackedScene" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
+[ext_resource type="Texture2D" uid="uid://dhi1mtglt038h" path="res://Game Scene/background.png" id="2_vsmle"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
 [ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Manager/GameOverManager.tscn" id="4_nl8ue"]
+[ext_resource type="PackedScene" uid="uid://2468avo4awnm" path="res://Wall/ceiling.tscn" id="4_sb8j3"]
 [ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_manager.gd" id="5_6ivl6"]
 [ext_resource type="Theme" path="res://Main Menu/main_theme.tres" id="6_33fdy"]
 [ext_resource type="Script" uid="uid://c58y45eeqg4ot" path="res://Score/score.gd" id="7_fnspm"]
@@ -16,46 +18,89 @@
 [node name="GameScene" type="Node2D" unique_id=158136633]
 script = ExtResource("1_fnspm")
 
+[node name="Background" type="Sprite2D" parent="." unique_id=2035981937]
+texture = ExtResource("2_vsmle")
+centered = false
+
 [node name="Walls" type="Node2D" parent="." unique_id=1698246839]
 
-[node name="Wall" parent="Walls" unique_id=1842671465 instance=ExtResource("1_mwla4")]
-position = Vector2(514, 42)
+[node name="Wall" parent="Walls" unique_id=2141049065 instance=ExtResource("1_mwla4")]
+position = Vector2(337, 1026)
 
-[node name="Wall2" parent="Walls" unique_id=2141049065 instance=ExtResource("1_mwla4")]
-position = Vector2(597, 42)
+[node name="Wall2" parent="Walls" unique_id=1851101311 instance=ExtResource("1_mwla4")]
+position = Vector2(335, 936)
 
-[node name="Wall3" parent="Walls" unique_id=2054506439 instance=ExtResource("1_mwla4")]
-position = Vector2(1005, 39)
+[node name="Wall3" parent="Walls" unique_id=46181586 instance=ExtResource("1_mwla4")]
+position = Vector2(335, 844)
 
-[node name="Wall4" parent="Walls" unique_id=665577543 instance=ExtResource("1_mwla4")]
-position = Vector2(1421, 39)
+[node name="Wall4" parent="Walls" unique_id=977750015 instance=ExtResource("1_mwla4")]
+position = Vector2(332, 757)
 
-[node name="Wall5" parent="Walls" unique_id=222950632 instance=ExtResource("1_mwla4")]
-position = Vector2(1701, 39)
+[node name="Wall5" parent="Walls" unique_id=1151465629 instance=ExtResource("1_mwla4")]
+position = Vector2(332, 667)
 
-[node name="Wall6" parent="Walls" unique_id=21104395 instance=ExtResource("1_mwla4")]
-position = Vector2(336, 285)
-rotation = 1.5707964
+[node name="Wall6" parent="Walls" unique_id=579921069 instance=ExtResource("1_mwla4")]
+position = Vector2(332, 575)
 
-[node name="Wall7" parent="Walls" unique_id=1923362897 instance=ExtResource("1_mwla4")]
-position = Vector2(337, 690)
-rotation = 1.5707964
+[node name="Wall7" parent="Walls" unique_id=1764536873 instance=ExtResource("1_mwla4")]
+position = Vector2(332, 483)
 
-[node name="Wall8" parent="Walls" unique_id=1510713454 instance=ExtResource("1_mwla4")]
-position = Vector2(340, 859)
-rotation = 1.5707964
+[node name="Wall8" parent="Walls" unique_id=2099068140 instance=ExtResource("1_mwla4")]
+position = Vector2(334, 391)
 
-[node name="Wall9" parent="Walls" unique_id=1689370744 instance=ExtResource("1_mwla4")]
-position = Vector2(1872, 284)
-rotation = 1.5707964
+[node name="Wall9" parent="Walls" unique_id=1200317923 instance=ExtResource("1_mwla4")]
+position = Vector2(334, 292)
 
-[node name="Wall10" parent="Walls" unique_id=655029868 instance=ExtResource("1_mwla4")]
-position = Vector2(1875, 689)
-rotation = 1.5707964
+[node name="Wall10" parent="Walls" unique_id=1139805459 instance=ExtResource("1_mwla4")]
+position = Vector2(334, 195)
 
-[node name="Wall11" parent="Walls" unique_id=162094821 instance=ExtResource("1_mwla4")]
-position = Vector2(1880, 858)
-rotation = 1.5707964
+[node name="Wall11" parent="Walls" unique_id=1301165104 instance=ExtResource("1_mwla4")]
+position = Vector2(334, 101)
+
+[node name="Wall12" parent="Walls" unique_id=990298745 instance=ExtResource("1_mwla4")]
+position = Vector2(1891, 1026)
+
+[node name="Wall13" parent="Walls" unique_id=1850063973 instance=ExtResource("1_mwla4")]
+position = Vector2(1889, 936)
+
+[node name="Wall14" parent="Walls" unique_id=1075862566 instance=ExtResource("1_mwla4")]
+position = Vector2(1889, 844)
+
+[node name="Wall15" parent="Walls" unique_id=1401752803 instance=ExtResource("1_mwla4")]
+position = Vector2(1886, 757)
+
+[node name="Wall16" parent="Walls" unique_id=644074375 instance=ExtResource("1_mwla4")]
+position = Vector2(1886, 667)
+
+[node name="Wall17" parent="Walls" unique_id=925710476 instance=ExtResource("1_mwla4")]
+position = Vector2(1886, 575)
+
+[node name="Wall18" parent="Walls" unique_id=1622351103 instance=ExtResource("1_mwla4")]
+position = Vector2(1886, 483)
+
+[node name="Wall19" parent="Walls" unique_id=1171871491 instance=ExtResource("1_mwla4")]
+position = Vector2(1888, 391)
+
+[node name="Wall20" parent="Walls" unique_id=1335649110 instance=ExtResource("1_mwla4")]
+position = Vector2(1888, 292)
+
+[node name="Wall21" parent="Walls" unique_id=1413814600 instance=ExtResource("1_mwla4")]
+position = Vector2(1888, 195)
+
+[node name="Wall22" parent="Walls" unique_id=1018308402 instance=ExtResource("1_mwla4")]
+position = Vector2(1888, 101)
+
+[node name="Ceiling" parent="Walls" unique_id=1221259363 instance=ExtResource("4_sb8j3")]
+position = Vector2(507, 31)
+
+[node name="Ceiling2" parent="Walls" unique_id=916571672 instance=ExtResource("4_sb8j3")]
+position = Vector2(924, 31)
+
+[node name="Ceiling3" parent="Walls" unique_id=352415368 instance=ExtResource("4_sb8j3")]
+position = Vector2(1339, 29)
+
+[node name="Ceiling4" parent="Walls" unique_id=1639440552 instance=ExtResource("4_sb8j3")]
+position = Vector2(1750, 29)
 
 [node name="Paddle" parent="." unique_id=825981723 instance=ExtResource("2_nl8ue")]
 position = Vector2(901, 981)
@@ -77,7 +122,7 @@ position = Vector2(427, 108)
 script = ExtResource("5_6ivl6")
 starting_rows = 3
 spawn_time = 12.0
-germ_spaces = 9
+germ_spaces = 10
 germ_scale = 96.0
 score_display = NodePath("../Info Display/VBoxContainer/CurrentScore/VBoxContainer/Score")
 

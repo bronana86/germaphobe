@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqbrfg4a421rp" path="res://Game Scene/game_manager.gd" id="1_fnspm"]
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
-[ext_resource type="PackedScene" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
+[ext_resource type="PackedScene" uid="uid://esm0knjsdkeo" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
 [ext_resource type="Texture2D" uid="uid://dhi1mtglt038h" path="res://Game Scene/background.png" id="2_vsmle"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
 [ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Manager/GameOverManager.tscn" id="4_nl8ue"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb6q5wrkhfdj" path="res://Score/thermostat.png" id="9_sb8j3"]
 [ext_resource type="Texture2D" uid="uid://cqsyipub3c8hp" path="res://Score/thermostat_full.png" id="10_vvv6q"]
 [ext_resource type="Script" uid="uid://bmffq78j0a01r" path="res://Score/progress_bar.gd" id="11_5n5vv"]
-[ext_resource type="AudioStream" uid="uid://b6q1pqtfn2lxi" path="res://Germs/boss_death.mp3" id="15_vvv6q"]
+[ext_resource type="PackedScene" uid="uid://dioonvpq1e16w" path="res://Game Scene/sneeze.tscn" id="15_vvv6q"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
 script = ExtResource("1_fnspm")
@@ -105,6 +105,7 @@ position = Vector2(1750, 29)
 
 [node name="Paddle" parent="." unique_id=825981723 instance=ExtResource("2_nl8ue")]
 position = Vector2(901, 981)
+scale = Vector2(1.0325813, 0.9965503)
 left_right_speed = 10.0
 
 [node name="Ball" parent="." unique_id=1200674082 instance=ExtResource("3_6ivl6")]
@@ -201,5 +202,5 @@ texture_over = ExtResource("9_sb8j3")
 texture_progress = ExtResource("10_vvv6q")
 script = ExtResource("11_5n5vv")
 
-[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="." unique_id=85945509]
-stream = ExtResource("15_vvv6q")
+[node name="Sneeze" parent="Info Display" unique_id=1151896116 instance=ExtResource("15_vvv6q")]
+position = Vector2(161, 852)

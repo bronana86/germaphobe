@@ -4,6 +4,7 @@ var germ_positions: Array[Vector2]			# The positions of the germs in this row.
 
 ## Create an instance of the germ to instantiate at row generation.
 var germ_scene = preload("res://Germs/germ.tscn")
+var boss_germ_scene = preload("uid://bm4g780umqh04")
 
 
 ## Initiate row information and spawn germs
@@ -21,7 +22,18 @@ func _ready() -> void:
 
 ## Spawns the different types of germs.
 func spawn_germ(pos: Vector2) -> void:
-	var germ = germ_scene.instantiate()
+	var rand_germ: int = randi_range(0, 50)
+	var germ: Node
+	
+	
+	if rand_germ > 48:
+		germ = boss_germ_scene.instantiate()
+		add_child(germ)
+		germ.position = pos
+		germ.row_position = pos
+		return
+	
+	germ = germ_scene.instantiate()
 	add_child(germ)
 	germ.weighted_random_animation()
 	germ.position = pos

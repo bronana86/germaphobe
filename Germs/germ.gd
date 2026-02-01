@@ -15,6 +15,9 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	# manually set the germ position in the row every frame
 	position = row_position
+	if global_position.y < 1000:
+		pass
+		#call gameover
 
 
 ## Destroys the germ when it comes into contact with the pill.
@@ -23,6 +26,7 @@ func _destroy() -> void:
 	$GermSprite.visible = false
 	$GermCollider.set_deferred("disabled", true)
 	$DeathPlayer.play()
+	await get_tree().create_timer($DeathPlayer.stream.get_length()).timeout
 	queue_free() # you serve ZERO purpose.
 
 

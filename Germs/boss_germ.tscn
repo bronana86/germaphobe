@@ -36,6 +36,7 @@ position = Vector2(0, -2)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_eeo2c")
 animation = &"boss_germ"
+autoplay = "boss_germ"
 
 [node name="GermCollider" type="CollisionShape2D" parent="." unique_id=1640232981]
 position = Vector2(-1, -1)

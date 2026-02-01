@@ -2,8 +2,8 @@ class_name Ball extends RigidBody2D
 ## Handles ball physics and behavior.
 
 @export var speed: float				## The speed scale of the ball, independent of direction.
-var speed_min: float = speed
-var speed_max: float = speed + 500
+const SPEED_MIN: float = 500
+const SPEED_MAX: float = 1000
 @export var speed_step: float			## The rate at which the ball speed can change.
 @export var starting_direction: Vector2	## The starting direction for the ball.
 
@@ -42,9 +42,9 @@ func next_pill() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP and speed < SPEED_MAX:
 				speed += speed_step
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and speed > SPEED_MIN:
 				speed -= speed_step
 			var direction = linear_velocity.normalized()
 			linear_velocity = direction*speed

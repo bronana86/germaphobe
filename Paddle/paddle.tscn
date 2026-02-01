@@ -1,38 +1,102 @@
 [gd_scene format=3 uid="uid://esm0knjsdkeo"]
 
 [ext_resource type="Script" uid="uid://bmha7c4m3434o" path="res://Paddle/paddle.gd" id="1_plu76"]
-[ext_resource type="Texture2D" uid="uid://d1ps0b6hcgwub" path="res://Paddle/paddle_protoype.png" id="2_welph"]
+[ext_resource type="Texture2D" uid="uid://duesdkubpffhn" path="res://Paddle/Mask1.png" id="2_welph"]
+[ext_resource type="Script" uid="uid://gpk2p6685p26" path="res://Paddle/mask_collision_counter.gd" id="3_welph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plu76"]
-size = Vector2(153.42516, 302)
+size = Vector2(17, 206)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_welph"]
-size = Vector2(130.5, 153)
+size = Vector2(15, 30.5)
 
 [node name="Paddle" type="StaticBody2D" unique_id=1088609142]
 script = ExtResource("1_plu76")
-left_right_speed = null
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541180371]
+[node name="MaskSprite" type="Sprite2D" parent="." unique_id=1541180371]
+unique_name_in_owner = true
 scale = Vector2(0.6561713, 0.65617126)
 texture = ExtResource("2_welph")
 
-[node name="BallBounceShape" type="CollisionShape2D" parent="." unique_id=365709559]
-position = Vector2(7.6293945e-06, 1.2125778)
+[node name="MaskCollision1" type="CollisionShape2D" parent="." unique_id=365709559]
+unique_name_in_owner = true
+position = Vector2(3.8146973e-06, -4.4999957)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_plu76")
 debug_color = Color(0.9123508, 0.21452719, 0.5134427, 0.41960785)
 
+[node name="MaskCollision2" type="CollisionPolygon2D" parent="." unique_id=1969703481]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-2.9999998, -1.9073486e-06)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(6.0959682, 41.147797, -155.4472, 12.191941, -146.30325, -15.239921, -70.10364, 6.095972, 4.571976, 12.191941, 74.67561, 6.095972, 156.97119, -15.239921, 167.63914, 10.667949)
+disabled = true
+
+[node name="MaskCollision3" type="CollisionPolygon2D" parent="." unique_id=1991769974]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-2.9999998, -1.9073486e-06)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(6.0959682, 82.295586, -161.54317, 9.143956, -143.25526, -12.191936, -79.2476, 33.527836, 6.0959682, 56.38772, 77.7236, 36.575817, 153.9232, -12.191936, 170.68712, 9.143956)
+disabled = true
+
+[node name="MaskCollision4" type="CollisionPolygon2D" parent="." unique_id=1589526023]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-2.9999998, -1.9073486e-06)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(4.571976, 184.40306, -76.19961, 149.35124, -123.443375, 86.86756, -163.06717, 3.0479875, -140.20728, -6.0959663, -100.58349, 71.62764, -54.86372, 129.53935, -22.859884, 150.87524, 4.571976, 156.9712, 33.52783, 150.87524, 62.483677, 134.11133, 102.107475, 83.81958, 149.35123, -7.619959, 173.7351, 4.5719795, 114.299416, 118.8714)
+disabled = true
+
 [node name="LeftCollisionArea" type="Area2D" parent="." unique_id=1658505693]
 unique_name_in_owner = true
+visible = false
 
 [node name="LeftCollisionBox" type="CollisionShape2D" parent="LeftCollisionArea" unique_id=2053226935]
-position = Vector2(-173.25, 0.5)
+position = Vector2(-103, -2)
 shape = SubResource("RectangleShape2D_welph")
 
 [node name="RightCollisionArea" type="Area2D" parent="." unique_id=2018681690]
 unique_name_in_owner = true
+visible = false
 
 [node name="RightCollisionBox" type="CollisionShape2D" parent="RightCollisionArea" unique_id=428369578]
-position = Vector2(153, 1)
+position = Vector2(103.5, -3)
 shape = SubResource("RectangleShape2D_welph")
+
+[node name="MaskCollisionCounter" type="Area2D" parent="." unique_id=1741759131]
+unique_name_in_owner = true
+script = ExtResource("3_welph")
+
+[node name="CollisionCounter1" type="CollisionShape2D" parent="MaskCollisionCounter" unique_id=1589527317]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -7)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_plu76")
+debug_color = Color(0.9123508, 0.21452719, 0.5134427, 0.41960785)
+
+[node name="CollisionCounter2" type="CollisionPolygon2D" parent="MaskCollisionCounter" unique_id=1332373327]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-3.0000002, -2.9999998)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(6.0959682, 41.147797, -155.4472, 12.191941, -146.30325, -15.239921, -70.10364, 6.095972, 4.571976, 12.191941, 74.67561, 6.095972, 156.97119, -15.239921, 167.63914, 10.667949)
+disabled = true
+
+[node name="CollisionCounter3" type="CollisionPolygon2D" parent="MaskCollisionCounter" unique_id=1157363897]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-3.0000002, -2.9999998)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(6.0959682, 82.295586, -166.11514, 13.71593, -143.25526, -12.191936, -79.2476, 33.527836, 6.0959682, 56.38772, 77.7236, 36.575817, 153.9232, -12.191936, 173.7351, 12.191938)
+disabled = true
+
+[node name="CollisionCounter4" type="CollisionPolygon2D" parent="MaskCollisionCounter" unique_id=1782523085]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-3.0000002, -4.9999995)
+scale = Vector2(0.6561713, 0.65617126)
+polygon = PackedVector2Array(4.571976, 184.40306, -76.19961, 149.35124, -123.443375, 86.86756, -169.16313, 6.0959682, -140.20728, -6.0959663, -100.58349, 71.62764, -54.86372, 129.53935, -22.859884, 150.87524, 4.571976, 156.9712, 33.52783, 150.87524, 62.483677, 134.11133, 102.107475, 83.81958, 149.35123, -7.619959, 179.83107, 7.619961, 114.299416, 118.8714)
+disabled = true

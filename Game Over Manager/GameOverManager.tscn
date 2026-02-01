@@ -31,6 +31,7 @@ shape = SubResource("SegmentShape2D_mnf0k")
 [node name="GameOverMenu" type="Control" parent="." unique_id=1689571770]
 unique_name_in_owner = true
 process_mode = 3
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0

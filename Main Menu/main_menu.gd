@@ -17,4 +17,4 @@ func _ready() ->void:
 
 ##This function initiates the start of the game when pressed
 func start_game() ->void: 
-	print("start the game")
+	get_tree().change_scene_to_file("uid://8wp4j67gb5hi") #loads game_scene.tscn

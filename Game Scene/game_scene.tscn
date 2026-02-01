@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://8wp4j67gb5hi"]
 
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
-[ext_resource type="PackedScene" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
+[ext_resource type="PackedScene" uid="uid://esm0knjsdkeo" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
-[ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Plane/GameOverPlane.tscn" id="4_nl8ue"]
+[ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Manager/GameOverManager.tscn" id="4_nl8ue"]
 [ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_manager.gd" id="5_6ivl6"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]

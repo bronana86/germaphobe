@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb6q5wrkhfdj" path="res://Score/thermostat.png" id="9_sb8j3"]
 [ext_resource type="Texture2D" uid="uid://cqsyipub3c8hp" path="res://Score/thermostat_full.png" id="10_vvv6q"]
 [ext_resource type="Script" uid="uid://bmffq78j0a01r" path="res://Score/progress_bar.gd" id="11_5n5vv"]
+[ext_resource type="AudioStream" uid="uid://b6q1pqtfn2lxi" path="res://Germs/boss_death.mp3" id="15_vvv6q"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
 script = ExtResource("1_fnspm")
@@ -111,6 +112,7 @@ position = Vector2(811, 875)
 contact_monitor = true
 max_contacts_reported = 5
 speed = 500.0
+speed_step = 90.0
 starting_direction = Vector2(1, -1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580459455]
@@ -198,3 +200,6 @@ fill_mode = 3
 texture_over = ExtResource("9_sb8j3")
 texture_progress = ExtResource("10_vvv6q")
 script = ExtResource("11_5n5vv")
+
+[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="." unique_id=85945509]
+stream = ExtResource("15_vvv6q")

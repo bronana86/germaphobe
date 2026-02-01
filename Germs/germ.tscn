@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ndnl14y1ru2" path="res://Germs/11.png" id="7_ufpbc"]
 [ext_resource type="Texture2D" uid="uid://bbafheoliamni" path="res://Germs/14.png" id="8_6ay14"]
 [ext_resource type="Texture2D" uid="uid://cnlpsnl28cjso" path="res://Germs/15.png" id="9_brvts"]
+[ext_resource type="AudioStream" uid="uid://q1qcwwo45l4v" path="res://Germs/germ_death.mp3" id="10_3hm4x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_84aq6"]
 friction = 0.0
@@ -79,3 +80,6 @@ autoplay = "germ_1"
 position = Vector2(-1, -1)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_84aq6")
+
+[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1505375407]
+stream = ExtResource("10_3hm4x")

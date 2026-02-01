@@ -21,14 +21,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5pvo"]
 size = Vector2(25, 26)
 
-[node name="Germ" type="RigidBody2D" unique_id=913903081]
-gravity_scale = 0.0
+[node name="Germ" type="StaticBody2D" unique_id=309844395 groups=["Germ"]]
 script = ExtResource("1_gkesm")
 
 [node name="GermSprite" type="AnimatedSprite2D" parent="." unique_id=674112745]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_eeo2c")
 autoplay = "default"
 
 [node name="GermCollider" type="CollisionShape2D" parent="." unique_id=1640232981]
 position = Vector2(-2.5, -1)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_e5pvo")

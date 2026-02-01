@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://8wp4j67gb5hi"]
 
 [ext_resource type="PackedScene" uid="uid://dy53ntyqb52jv" path="res://Wall/wall.tscn" id="1_mwla4"]
-[ext_resource type="PackedScene" uid="uid://esm0knjsdkeo" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
+[ext_resource type="PackedScene" path="res://Paddle/paddle.tscn" id="2_nl8ue"]
 [ext_resource type="PackedScene" uid="uid://dy03gxb518pey" path="res://Ball/ball.tscn" id="3_6ivl6"]
 [ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Plane/GameOverPlane.tscn" id="4_nl8ue"]
+[ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_manager.gd" id="5_6ivl6"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
 
@@ -25,15 +26,15 @@ position = Vector2(1421, 39)
 position = Vector2(1701, 39)
 
 [node name="Wall6" parent="Walls" unique_id=21104395 instance=ExtResource("1_mwla4")]
-position = Vector2(376, 285)
+position = Vector2(41, 285)
 rotation = 1.5707964
 
 [node name="Wall7" parent="Walls" unique_id=1923362897 instance=ExtResource("1_mwla4")]
-position = Vector2(379, 690)
+position = Vector2(42, 690)
 rotation = 1.5707964
 
 [node name="Wall8" parent="Walls" unique_id=1510713454 instance=ExtResource("1_mwla4")]
-position = Vector2(384, 859)
+position = Vector2(43, 859)
 rotation = 1.5707964
 
 [node name="Wall9" parent="Walls" unique_id=1689370744 instance=ExtResource("1_mwla4")]
@@ -53,10 +54,21 @@ position = Vector2(901, 981)
 left_right_speed = 10.0
 
 [node name="Ball" parent="." unique_id=1200674082 instance=ExtResource("3_6ivl6")]
-position = Vector2(503, 217)
+position = Vector2(259, 738)
+contact_monitor = true
+max_contacts_reported = 5
 speed = 500.0
+starting_direction = Vector2(1, -1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580459455]
 
 [node name="GameOverPlane" parent="." unique_id=1027130878 instance=ExtResource("4_nl8ue")]
 position = Vector2(126, 1097)
+
+[node name="GermManager" type="Node2D" parent="." unique_id=1728280054]
+position = Vector2(220, 108)
+script = ExtResource("5_6ivl6")
+starting_rows = 3
+spawn_time = 3.0
+germ_spaces = 10
+germ_scale = 96.0

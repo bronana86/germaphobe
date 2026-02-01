@@ -11,3 +11,10 @@ func _ready() -> void:
 
 func _physics_process(_delta) -> void:
 	pass
+
+
+## Checks whether the ball collided with a germ and call the germ to destroy itsself.
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("Germ"):
+		body._destroy()
+	pass # Replace with function body.

@@ -4,12 +4,14 @@
 [ext_resource type="Theme" uid="uid://bg3hae0xognpj" path="res://Main Menu/main_theme.tres" id="2_mnf0k"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mnf0k"]
-b = Vector2(1942, -1)
+a = Vector2(-736, -13)
+b = Vector2(2534, -13)
 
 [node name="GameOverPlane" type="Area2D" unique_id=1027130878]
 script = ExtResource("1_exltc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479355379]
+position = Vector2(-19, 1131)
 shape = SubResource("SegmentShape2D_mnf0k")
 
 [node name="Control" type="Control" parent="." unique_id=1689571770]

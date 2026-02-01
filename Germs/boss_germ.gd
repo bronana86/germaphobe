@@ -14,9 +14,12 @@ func _process(_delta) -> void:
 ## Destroys the germ when it comes into contact with the pill.
 func _destroy() -> void:
 	GameManager.current_score += point_value
-	queue_free() # you serve ZERO purpose.
 	
-	# play boss die sound
+	$GermSprite.visible = false
+	$GermCollider.set_deferred("disabled", true)
 	$DeathPlayer.play()
+	await get_tree().create_timer($DeathPlayer.stream.get_length()).timeout
 	
-	# give player sneeze in game manager
+	GameManager.obtain_sneeze()
+	
+	queue_free() # you serve ZERO purpose.

@@ -67,6 +67,7 @@ animations = [{
 [node name="Germ" type="StaticBody2D" unique_id=309844395 groups=["Germ"]]
 physics_material_override = SubResource("PhysicsMaterial_84aq6")
 script = ExtResource("1_gkesm")
+germ_weight = 0.5
 anim_weights = Array[float]([0.4, 0.8, 1.2, 0.2])
 
 [node name="GermSprite" type="AnimatedSprite2D" parent="." unique_id=674112745]

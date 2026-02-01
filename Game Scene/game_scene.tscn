@@ -69,6 +69,6 @@ position = Vector2(126, 1097)
 position = Vector2(220, 108)
 script = ExtResource("5_6ivl6")
 starting_rows = 3
-spawn_time = 3.0
+spawn_time = 10.0
 germ_spaces = 10
 germ_scale = 96.0

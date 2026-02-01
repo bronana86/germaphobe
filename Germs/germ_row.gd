@@ -16,7 +16,13 @@ func _ready() -> void:
 	
 	# Instantiate the germ objects and add them to a row.
 	for pos in germ_positions:
-		var germ = germ_scene.instantiate()
-		add_child(germ)
-		germ.position = pos
-		germ.row_position = pos # make sure each germ knows where it's supposed to stay.
+		spawn_germ(pos)
+
+
+## Spawns the different types of germs.
+func spawn_germ(pos: Vector2) -> void:
+	var germ = germ_scene.instantiate()
+	add_child(germ)
+	germ.weighted_random_animation()
+	germ.position = pos
+	germ.row_position = pos

@@ -1,8 +1,15 @@
-class_name Gernm extends StaticBody2D
+class_name Germ extends StaticBody2D
 
 var row_position: Vector2
+@export var germ_weight: float
 
+## The frequency for which each animation appears. Position of the weight value must match the position of the animation in the SpriteFrames.
+@export var anim_weights: Array[float]
+var anim_weight_total: float = 0
 
+func _ready() -> void:
+	for value in anim_weights:
+		anim_weight_total += value
 
 func _process(_delta) -> void:
 	# manually set the germ position in the row every frame
@@ -13,3 +20,41 @@ func _process(_delta) -> void:
 func _destroy() -> void:
 	# signal to update score.
 	queue_free() # you server ZERO purpose.
+
+
+## Selects a random animation.
+func random_animation() -> void:
+	var anim: float = randf_range(0, 4)
+	anim = snappedf(anim, 1)
+	match anim:
+				0.0:
+					$GermSprite.animation = "germ_1"
+				1.0:
+					$GermSprite.animation = "germ_2"
+				2.0:
+					$GermSprite.animation = "germ_3"
+				3.0:
+					$GermSprite.animation = "germ_4"
+
+
+## Finds an animation based on it's weight value
+func weighted_random_animation() -> void:
+	var anim_num: float = randf_range(0, anim_weight_total)
+	
+	for value in anim_weights:
+		if value >= anim_num:
+			match anim_weights.find(value):
+				0:
+					$GermSprite.animation = "germ_1"
+				1:
+					$GermSprite.animation = "germ_2"
+				2:
+					$GermSprite.animation = "germ_3"
+				3:
+					$GermSprite.animation = "germ_4"
+			return
+		else: anim_num -= value
+	
+	# If an animation isn't set, return the last one in the list. This shouldn't happen.
+	print_debug("Couldn't find a random weighted animation")
+	$GermSprite.animation = "germ_4"

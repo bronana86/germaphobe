@@ -16,8 +16,6 @@ var germ_row_prefab: PackedScene = preload("res://Germs/germ_row.tscn")
 ## Generate the rows along the starting points.
 func _ready() -> void:
 	# manually set three starting rows.
-
-	
 	for i in range(0, starting_rows):
 		var germ_row = germ_row_prefab.instantiate()
 		add_child(germ_row)
@@ -37,8 +35,13 @@ func spawn_row() -> void:
 	var children = get_children()
 	for child in children:
 		child.position.y += germ_scale
-	await get_tree().create_timer(0.5).timeout
-	var germ_row = germ_row_prefab.instantiate()
-	add_child(germ_row)
+	await get_tree().create_timer(0.2).timeout
+	spawn_germ_row()
 	# reset the timer
 	spawn_row()
+
+
+## Spawns a row of germs.
+func spawn_germ_row() -> void:
+	var germ_row = germ_row_prefab.instantiate()
+	add_child(germ_row)

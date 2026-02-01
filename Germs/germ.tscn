@@ -1,35 +1,81 @@
 [gd_scene format=3 uid="uid://dey3srcpm0okh"]
 
-[ext_resource type="Texture2D" uid="uid://cfojtqvw8tdw2" path="res://Germs/TEMP_basic_germ_1.png" id="1_6kl71"]
 [ext_resource type="Script" uid="uid://baq0wiesu17uc" path="res://Germs/germ.gd" id="1_gkesm"]
-[ext_resource type="Texture2D" uid="uid://cjaanml1sbe8x" path="res://Germs/TEMP_basic_germ_2.png" id="2_gkesm"]
+[ext_resource type="Texture2D" uid="uid://nm1ylp6lch52" path="res://Germs/1.png" id="2_gkesm"]
+[ext_resource type="Texture2D" uid="uid://2j6h7qyq62ys" path="res://Germs/2.png" id="3_52ajd"]
+[ext_resource type="Texture2D" uid="uid://lodnejy1345l" path="res://Germs/12.png" id="4_84aq6"]
+[ext_resource type="Texture2D" uid="uid://sxgxlle0uht5" path="res://Germs/13.png" id="5_3hm4x"]
+[ext_resource type="Texture2D" uid="uid://ckxoiecg4i3e3" path="res://Germs/10.png" id="6_jd8tf"]
+[ext_resource type="Texture2D" uid="uid://d3ndnl14y1ru2" path="res://Germs/11.png" id="7_ufpbc"]
+[ext_resource type="Texture2D" uid="uid://bbafheoliamni" path="res://Germs/14.png" id="8_6ay14"]
+[ext_resource type="Texture2D" uid="uid://cnlpsnl28cjso" path="res://Germs/15.png" id="9_brvts"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_84aq6"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eeo2c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_6kl71")
+"texture": ExtResource("2_gkesm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_gkesm")
+"texture": ExtResource("3_52ajd")
 }],
 "loop": true,
-"name": &"default",
+"name": &"germ_1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_84aq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3hm4x")
+}],
+"loop": true,
+"name": &"germ_2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jd8tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ufpbc")
+}],
+"loop": true,
+"name": &"germ_3",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6ay14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_brvts")
+}],
+"loop": true,
+"name": &"germ_4",
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5pvo"]
-size = Vector2(25, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84aq6"]
 
 [node name="Germ" type="StaticBody2D" unique_id=309844395 groups=["Germ"]]
+physics_material_override = SubResource("PhysicsMaterial_84aq6")
 script = ExtResource("1_gkesm")
+anim_weights = Array[float]([0.4, 0.8, 1.2, 0.2])
 
 [node name="GermSprite" type="AnimatedSprite2D" parent="." unique_id=674112745]
-scale = Vector2(3, 3)
+position = Vector2(0, -2)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_eeo2c")
-autoplay = "default"
+animation = &"germ_1"
+autoplay = "germ_1"
 
 [node name="GermCollider" type="CollisionShape2D" parent="." unique_id=1640232981]
-position = Vector2(-2.5, -1)
+position = Vector2(-1, -1)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_e5pvo")
+shape = SubResource("RectangleShape2D_84aq6")

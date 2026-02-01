@@ -16,4 +16,6 @@ func _physics_process(_delta) -> void:
 ## Checks whether the ball collided with a germ and call the germ to destroy itsself.
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Germ"):
+		var direction = linear_velocity.normalized()
+		linear_velocity = direction*speed
 		body._destroy()

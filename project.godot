@@ -29,6 +29,8 @@ window/size/resizable=false
 [global_group]
 
 Germ="Holds all germ enemies."
+Paddle=""
+Sneeze=""
 
 [input]
 

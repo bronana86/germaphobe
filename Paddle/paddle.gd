@@ -53,8 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			mask_collision_1.set_deferred("disabled",false)
 			GameManager.sneeze = false
 			generate_bounce_damage_array()
-			var sneezes = get_tree().get_nodes_in_group("Sneeze")
-			sneezes[0].visible = false
+
 
 ##The following scripts change the shape and 
 ##collision box of the mask

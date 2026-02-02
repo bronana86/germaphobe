@@ -16,8 +16,6 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	# manually set the germ position in the row every frame
 	position = row_position
-	#if global_position.y > 1000:
-		#game_ended.emit()
 
 
 ## Destroys the germ when it comes into contact with the pill.

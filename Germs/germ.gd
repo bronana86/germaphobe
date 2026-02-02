@@ -2,6 +2,7 @@ class_name Germ extends StaticBody2D
 
 var row_position: Vector2
 @export var germ_weight: float
+signal game_ended
 
 ## The frequency for which each animation appears. Position of the weight value must match the position of the animation in the SpriteFrames.
 @export var anim_weights: Array[float]
@@ -15,9 +16,8 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	# manually set the germ position in the row every frame
 	position = row_position
-	if global_position.y < 1000:
-		pass
-		#call gameover
+	#if global_position.y > 1000:
+		#game_ended.emit()
 
 
 ## Destroys the germ when it comes into contact with the pill.

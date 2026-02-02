@@ -10,7 +10,7 @@ a = Vector2(-1590, 14)
 b = Vector2(3056, -3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdvwr"]
-size = Vector2(2204, 77)
+size = Vector2(213, 135.5)
 
 [node name="GameOverManager" type="Node2D" unique_id=1552969452]
 script = ExtResource("1_xdvwr")
@@ -27,8 +27,9 @@ shape = SubResource("SegmentShape2D_mnf0k")
 unique_name_in_owner = true
 script = ExtResource("2_b3nye")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GermGameOverPlane" unique_id=133130461]
-position = Vector2(882, 608)
+[node name="GermScanner" type="CollisionShape2D" parent="GermGameOverPlane" unique_id=133130461]
+unique_name_in_owner = true
+position = Vector2(-161, 995)
 shape = SubResource("RectangleShape2D_xdvwr")
 
 [node name="GameOverMenu" type="Control" parent="." unique_id=1689571770]
@@ -54,7 +55,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SpacingContainer" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1294356257]
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=241429978]
@@ -65,13 +66,12 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="SpacingContainer2" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=225773186]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
 [node name="ScoreLabel" type="RichTextLabel" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=197854195]
 layout_mode = 2
 bbcode_enabled = true
-text = "Score: 9000"
 fit_content = true
 horizontal_alignment = 1
 

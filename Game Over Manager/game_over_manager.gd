@@ -6,11 +6,13 @@ extends Node2D
 
 @onready var retry_button: Button = %RetryButton
 @onready var main_menu_button: Button = %MainMenuButton
+@onready var germ_manager: GermManager = %GermManager
 
 func _ready() ->void:
 	game_over_menu.visible = false
 	ball_game_over_plane.connect("game_ended",game_over)
 	germ_game_over_plane.connect("game_ended",game_over)
+	germ_manager.connect("game_ended", game_over)
 	retry_button.pressed.connect(reload_game)
 	main_menu_button.pressed.connect(go_to_main_menu)
 

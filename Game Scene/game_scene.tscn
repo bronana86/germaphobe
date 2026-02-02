@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbejnnxorrsdf" path="res://Game Over Manager/GameOverManager.tscn" id="4_nl8ue"]
 [ext_resource type="PackedScene" uid="uid://2468avo4awnm" path="res://Wall/ceiling.tscn" id="4_sb8j3"]
 [ext_resource type="Script" uid="uid://cvp8nsfge1vq5" path="res://Germs/germ_manager.gd" id="5_6ivl6"]
-[ext_resource type="Theme" path="res://Main Menu/main_theme.tres" id="6_33fdy"]
+[ext_resource type="Theme" uid="uid://bg3hae0xognpj" path="res://Main Menu/main_theme.tres" id="6_33fdy"]
 [ext_resource type="Script" uid="uid://c58y45eeqg4ot" path="res://Score/score.gd" id="7_fnspm"]
 [ext_resource type="Script" uid="uid://72g1duhyu5rc" path="res://Score/high_score.gd" id="8_vsmle"]
 [ext_resource type="Texture2D" uid="uid://cjb6q5wrkhfdj" path="res://Score/thermostat.png" id="9_sb8j3"]
@@ -121,6 +121,7 @@ starting_direction = Vector2(1, -1)
 [node name="GameOverPlane" parent="." unique_id=1027130878 instance=ExtResource("4_nl8ue")]
 
 [node name="GermManager" type="Node2D" parent="." unique_id=1728280054 node_paths=PackedStringArray("score_display")]
+unique_name_in_owner = true
 position = Vector2(427, 108)
 script = ExtResource("5_6ivl6")
 starting_rows = 3

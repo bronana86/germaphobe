@@ -103,7 +103,7 @@ position = Vector2(1339, 29)
 [node name="Ceiling4" parent="Walls" unique_id=1639440552 instance=ExtResource("4_sb8j3")]
 position = Vector2(1750, 29)
 
-[node name="Paddle" parent="." unique_id=825981723 instance=ExtResource("2_nl8ue")]
+[node name="Paddle" parent="." unique_id=825981723 groups=["Paddle"] instance=ExtResource("2_nl8ue")]
 position = Vector2(901, 981)
 scale = Vector2(1.0325813, 0.9965503)
 left_right_speed = 10.0
@@ -115,6 +115,7 @@ max_contacts_reported = 5
 speed = 500.0
 speed_step = 90.0
 starting_direction = Vector2(1, -1)
+pill_sprites = Array[CompressedTexture2D]([null, null, null])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580459455]
 
@@ -164,6 +165,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="HighScore" type="MarginContainer" parent="Info Display/VBoxContainer" unique_id=1715153801]
+visible = false
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -202,5 +204,6 @@ texture_over = ExtResource("9_sb8j3")
 texture_progress = ExtResource("10_vvv6q")
 script = ExtResource("11_5n5vv")
 
-[node name="Sneeze" parent="Info Display" unique_id=1151896116 instance=ExtResource("15_vvv6q")]
-position = Vector2(161, 852)
+[node name="Sneeze" parent="." unique_id=1151896116 groups=["Sneeze"] instance=ExtResource("15_vvv6q")]
+visible = false
+position = Vector2(156, 882)

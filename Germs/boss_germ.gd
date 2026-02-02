@@ -19,7 +19,8 @@ func _destroy() -> void:
 	$GermCollider.set_deferred("disabled", true)
 	$DeathPlayer.play()
 	await get_tree().create_timer($DeathPlayer.stream.get_length()).timeout
-	
+	var sneezes = get_tree().get_nodes_in_group("Sneeze")
+	sneezes[0].visible = true
 	GameManager.obtain_sneeze()
 	
 	queue_free() # you serve ZERO purpose.

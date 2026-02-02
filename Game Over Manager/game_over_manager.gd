@@ -18,10 +18,14 @@ func _ready() ->void:
 
 func game_over() ->void:
 	game_over_menu.visible = true
+	var file = FileAccess.open("res://Score.high_score.txt", FileAccess.WRITE)
+	file.store_string(str(GameManager.high_score))
+	file.close()
 	get_tree().paused = true
 
 func reload_game() ->void:
 	get_tree().paused = false
+	GameManager.current_score = 0
 	get_tree().change_scene_to_file("uid://8wp4j67gb5hi") #loads game_scene.tscn
 
 func go_to_main_menu() ->void:

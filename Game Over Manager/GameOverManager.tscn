@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbuafw2tvcu7v" path="res://Game Over Manager/ball_game_over_plane.gd" id="1_exltc"]
 [ext_resource type="Script" uid="uid://d375kpn2lswvp" path="res://Game Over Manager/game_over_manager.gd" id="1_xdvwr"]
 [ext_resource type="Script" uid="uid://ca71xekj18m8t" path="res://Game Over Manager/germ_game_over_plane.gd" id="2_b3nye"]
-[ext_resource type="Theme" path="res://Main Menu/main_theme.tres" id="2_mnf0k"]
+[ext_resource type="Theme" uid="uid://bg3hae0xognpj" path="res://Main Menu/main_theme.tres" id="2_mnf0k"]
 [ext_resource type="Script" uid="uid://dsf75x040gc1x" path="res://Game Over Manager/score_label.gd" id="5_iv1l4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mnf0k"]
@@ -67,7 +67,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="SpacingContainer2" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=225773186]
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="ScoreLabel" type="RichTextLabel" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=197854195]

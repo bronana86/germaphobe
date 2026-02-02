@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dlb7cm88daddg" path="res://Game Scene/sneeze_1.png" id="1_jfot1"]
 [ext_resource type="Texture2D" uid="uid://cx8iwaqhfnfop" path="res://Game Scene/sneeze_2.png" id="2_k7ee6"]
+[ext_resource type="Script" uid="uid://dffvmy5uu341u" path="res://Game Scene/sneeze.gd" id="3_k7ee6"]
+[ext_resource type="AudioStream" uid="uid://fh66wyiyiwqg" path="res://Game Scene/sneeze_sound.mp3" id="4_q7kqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q7kqv"]
 animations = [{
@@ -21,3 +23,8 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_q7kqv")
 autoplay = "default"
 frame_progress = 0.5242611
+script = ExtResource("3_k7ee6")
+
+[node name="Sneezer" type="AudioStreamPlayer2D" parent="." unique_id=1141859245]
+stream = ExtResource("4_q7kqv")
+volume_db = -15.0

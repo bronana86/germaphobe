@@ -7,7 +7,7 @@ const SPEED_MAX: float = 1000
 @export var speed_step: float			## The rate at which the ball speed can change.
 @export var starting_direction: Vector2	## The starting direction for the ball.
 
-@export var pill_sprites: Array			## The three different ball sprites.
+@export var pill_sprites: Array[CompressedTexture2D]			## The three different ball sprites.
 var pill_index: int = 0
 var score_initial: int
 
@@ -18,8 +18,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta) -> void:
-	if GameManager.current_score - 5000 > score_initial:
-		next_pill()
+	pass
 
 
 ## Checks whether the ball collided with a germ and call the germ to destroy itsself.
@@ -31,11 +30,6 @@ func _on_body_entered(body: Node) -> void:
 		body._destroy()
 
 
-## Switches the pill sprites.
-func next_pill() -> void:
-	$BallSprite.texture = pill_sprites[pill_index]
-	pill_index += 1
-	score_initial = GameManager.current_score
 
 
 ## Takes scroll inputs to increase ball speed
@@ -48,3 +42,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				speed -= speed_step
 			var direction = linear_velocity.normalized()
 			linear_velocity = direction*speed
+	
+	elif event is InputEventKey:
+		if event.is_pressed() and event.keycode == KEY_SPACE and GameManager.sneeze:
+			var direction = Vector2(0, -1)
+			linear_velocity = direction*900

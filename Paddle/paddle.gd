@@ -44,6 +44,18 @@ func _on_right_area_exited(body :Node2D) ->void:
 		wall_on_right_side = false
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_pressed() and event.keycode == KEY_SPACE and GameManager.sneeze:
+			turn_off_mask()
+			mask_sprite.texture = MaskSprite1
+			collision_counter_1.set_deferred("disabled", false)
+			mask_collision_1.set_deferred("disabled",false)
+			GameManager.sneeze = false
+			generate_bounce_damage_array()
+			var sneezes = get_tree().get_nodes_in_group("Sneeze")
+			sneezes[0].visible = false
+
 ##The following scripts change the shape and 
 ##collision box of the mask
 var bounce_damage_array :Array[int] = []

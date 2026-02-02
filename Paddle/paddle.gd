@@ -53,7 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			mask_collision_1.set_deferred("disabled",false)
 			GameManager.sneeze = false
 			generate_bounce_damage_array()
-
+			ball_bounce_counter = 0
 
 ##The following scripts change the shape and 
 ##collision box of the mask

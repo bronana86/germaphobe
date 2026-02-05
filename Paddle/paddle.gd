@@ -84,9 +84,9 @@ var MaskSprite4 = preload("uid://06wfghvq2u0v")
 
 func generate_bounce_damage_array() ->void:
 	bounce_damage_array = [0,0,0]
-	bounce_damage_array[0] += randi_range(4,7)
-	bounce_damage_array[1] += randi_range(9,13)
-	bounce_damage_array[2] += randi_range(15,20)
+	bounce_damage_array[0] += randi_range(3,5)
+	bounce_damage_array[1] += randi_range(7,10)
+	bounce_damage_array[2] += randi_range(12,15)
 	
 func _on_ball_bounced() ->void:
 	ball_bounce_counter += 1

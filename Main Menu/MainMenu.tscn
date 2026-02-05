@@ -5,20 +5,17 @@
 
 [node name="MainMenu" type="Control" unique_id=1266837766]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 theme = ExtResource("1_ng0yx")
 script = ExtResource("2_fxvm1")
 
 [node name="MainScreen" type="PanelContainer" parent="." unique_id=1789804037]
-custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -90,7 +87,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(527, 168)
 layout_mode = 2
 bbcode_enabled = true
-text = "[color=purple]Bounce the pill[br]to defeat the germs[/color]"
+text = "[color=purple]Speed up the pill using the mousewheel [/color]"
 scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -103,7 +100,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(527, 168)
 layout_mode = 2
 bbcode_enabled = true
-text = "[color=purple]Sneeze to restore a damaged mask [/color]"
+text = "[color=purple]Sneeze [Spacebar] to restore the mask [/color]"
 scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -111,11 +108,12 @@ metadata/_edit_use_anchors_ = true
 [node name="CreditsMenu" type="Control" parent="." unique_id=1267823812]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -180,16 +178,8 @@ text = "[shake rate=15.0 level=20 connected=1][outline_size=6][color=green]Sound
 fit_content = true
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="CreditsMenu" unique_id=1238139727]
+[node name="BackButton" type="Button" parent="CreditsMenu/PanelContainer/VBoxContainer" unique_id=1238139727]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43500003
-anchor_top = 0.87500006
-anchor_right = 0.56200004
-anchor_bottom = 0.93200004
-offset_left = 0.79992676
-offset_top = -6.1035156e-05
-offset_right = -0.040039063
-offset_bottom = 0.4399414
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Back"

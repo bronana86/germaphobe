@@ -45,5 +45,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	elif event is InputEventKey:
 		if event.is_pressed() and event.keycode == KEY_SPACE and GameManager.sneeze:
-			var direction = Vector2(0, -1)
+			var direction = Vector2(randf_range(-0.5,0.5) ,-1).normalized()
 			linear_velocity = direction*900

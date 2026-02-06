@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dioonvpq1e16w" path="res://Game Scene/sneeze.tscn" id="15_vvv6q"]
 
 [node name="GameScene" type="Node2D" unique_id=158136633]
+scale = Vector2(0.66791, 0.66791)
 script = ExtResource("1_fnspm")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2035981937]
@@ -120,6 +121,7 @@ pill_sprites = Array[CompressedTexture2D]([null, null, null])
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580459455]
 
 [node name="GameOverPlane" parent="." unique_id=1027130878 instance=ExtResource("4_nl8ue")]
+position = Vector2(691.70996, 329.38574)
 
 [node name="GermManager" type="Node2D" parent="." unique_id=1728280054 node_paths=PackedStringArray("score_display")]
 unique_name_in_owner = true
@@ -206,5 +208,4 @@ texture_progress = ExtResource("10_vvv6q")
 script = ExtResource("11_5n5vv")
 
 [node name="Sneeze" parent="." unique_id=1151896116 groups=["Sneeze"] instance=ExtResource("15_vvv6q")]
-visible = false
 position = Vector2(156, 882)

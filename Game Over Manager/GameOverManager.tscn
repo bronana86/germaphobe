@@ -14,6 +14,7 @@ b = Vector2(3056, -3)
 size = Vector2(213, 135.5)
 
 [node name="GameOverManager" type="Node2D" unique_id=1552969452]
+scale = Vector2(0.667, 0.667)
 script = ExtResource("1_xdvwr")
 
 [node name="BallGameOverPlane" type="Area2D" parent="." unique_id=1027130878]
@@ -33,66 +34,65 @@ unique_name_in_owner = true
 position = Vector2(-156, 1036)
 shape = SubResource("RectangleShape2D_xdvwr")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=389146539]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GameOverMenu" type="Control" parent="AspectRatioContainer" unique_id=1689571770]
+[node name="GameOverMenu" type="Control" parent="." unique_id=1689571770]
 unique_name_in_owner = true
 process_mode = 3
 z_index = 2
-layout_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 theme = ExtResource("2_mnf0k")
 
-[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/GameOverMenu" unique_id=1649174069]
+[node name="CenterContainer" type="CenterContainer" parent="GameOverMenu" unique_id=1649174069]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
-[node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainer/GameOverMenu/CenterContainer" unique_id=410301942]
+[node name="PanelContainer" type="PanelContainer" parent="GameOverMenu/CenterContainer" unique_id=410301942]
 custom_minimum_size = Vector2(600, 360)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer" unique_id=1937757372]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverMenu/CenterContainer/PanelContainer" unique_id=1937757372]
 layout_mode = 2
 
-[node name="SpacingContainer" type="Container" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1294356257]
+[node name="SpacingContainer" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1294356257]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=241429978]
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=241429978]
 layout_mode = 2
 bbcode_enabled = true
 text = "[tornado radius=5.0 freq=3 connected=1]Game Over[/tornado]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="SpacingContainer2" type="Container" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=225773186]
+[node name="SpacingContainer2" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=225773186]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="ScoreLabel" type="RichTextLabel" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=197854195]
+[node name="ScoreLabel" type="RichTextLabel" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=197854195]
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
 horizontal_alignment = 1
 script = ExtResource("5_iv1l4")
 
-[node name="SpacingContainer4" type="Container" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1696326600]
+[node name="SpacingContainer4" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1696326600]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="RetryButton" type="Button" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=541139429]
+[node name="RetryButton" type="Button" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=541139429]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Retry"
 
-[node name="SpacingContainer3" type="Container" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1015358517]
+[node name="SpacingContainer3" type="Container" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1015358517]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="MainMenuButton" type="Button" parent="AspectRatioContainer/GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1205016195]
+[node name="MainMenuButton" type="Button" parent="GameOverMenu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1205016195]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

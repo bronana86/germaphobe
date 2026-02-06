@@ -6,6 +6,7 @@
 [node name="MainMenu" type="Control" unique_id=1266837766]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.6667503, 0.6667503)
 theme = ExtResource("1_ng0yx")
 script = ExtResource("2_fxvm1")
 
